@@ -11,7 +11,7 @@ pip install gzip
 
 ## How to run the program
 To run the benchmark, you have to get the lastest source code from git, then excute your python file in terminal or command line:
-'''
+```
 $ git clone https://github.com/altaite/mmtf-python-benchmark.git
 $ python benchmark_mmtf_python.py
-''' 
+``` 
