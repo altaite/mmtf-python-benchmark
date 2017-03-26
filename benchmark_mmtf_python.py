@@ -17,8 +17,8 @@ except Exception:
 
 
 #all files to test
-infiles = ['sample_3j3q.csv','sample_25.csv','sample_50.csv','sample_75.csv','sample_1000.csv']
-
+#infiles = ['sample_3j3q.csv','sample_25.csv','sample_50.csv','sample_75.csv','sample_1000.csv']
+infiles = ['sample_25.csv']
 #3 types of files and the "FastMMCIFParser" to be tested
 file_types = ['mmtf','cif','fast_cif' ,'pdb']
 
@@ -62,9 +62,12 @@ def get_all_protein(file_type,proteins):
         #sort proteins into directories by their middle two characters
         directory = "%s/%s"%(cwd,file_type)
         if not os.path.exists(directory):
-                os.makedirs(directory)
-        os.rename("%s/%s.%s"%(cwd,protein,file_type),\
-                "%s/%s.%s"%(directory,protein,file_type))
+            os.makedirs(directory)
+        if not os.path.exists("%s/%s.%s"%(directory,protein,file_type)):
+            os.rename("%s/%s.%s"%(cwd,protein,file_type),\
+            "%s/%s.%s"%(directory,protein,file_type))
+        else:
+            os.remove("%s/%s.%s"%(cwd,protein,file_type))
 
 
 '''
