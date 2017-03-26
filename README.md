@@ -3,11 +3,11 @@ This repository contains the python script that benchmarks different protein fil
 
 ## Installing required python packages
 The python script in this repository requires a few packages, including *biopython* and *wget*. These packages can be installed through pip: 
-'''
-pip install biopython
+```
+pip install biopython 
 pip install wget 
 pip install gzip
-''' 
+``` 
 
 ## How to run the program
 To run the benchmark, you have to get the lastest source code from git, then excute your python file in terminal or command line:
