@@ -19,6 +19,7 @@ except Exception:
 #all files to test
 #infiles = ['sample_3j3q.csv','sample_25.csv','sample_50.csv','sample_75.csv','sample_1000.csv']
 infiles = ['sample_25.csv']
+
 #3 types of files and the "FastMMCIFParser" to be tested
 file_types = ['mmtf','cif','fast_cif' ,'pdb']
 
@@ -86,7 +87,7 @@ def time_download(infile,proteins):
     #write benchmark results to text file
     with open("download_benchmark_results.csv","w") as o:
         for t in time_keeper: 
-            o.write(t + '/n')
+            o.write(t + '\n')
 
 
 '''
@@ -142,11 +143,9 @@ if __name__ == '__main__':
         proteins = get_proteins(f)
         time_download(f,proteins)
         infile_time[f] = time_parsing(proteins)
-        #infile_time[f] = time_parsing(proteins)
     #write benchmark results to text file
     with open("parsing_benchmark_results.csv","w") as o:
         o.write("File,MMTF,MMCIF,FastMMCIF,PDB \n")
         for f in infiles: 
             o.write(f[:-4] + "," + str(infile_time[f]["mmtf"])+","+str(infile_time[f]["cif"])+ \
             "," + str(infile_time[f]["fast_cif"])+","+ str(infile_time[f]["pdb"]) + "\n")
-
