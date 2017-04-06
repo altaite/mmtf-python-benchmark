@@ -1,4 +1,4 @@
-##Benchmarks for comparing 3D structure file parser performance in Biopython
+## Benchmarks for comparing 3D structure file parser performance in Biopython
  
 This repository contains **Python 3.x** code for comparing the file parsing performance of the PDB and PDBx/mmCIF *(https://www.wwpdb.org/documentation/file-format)* file formats with the new MacroMolecular Transmission Format *(MMTF, http://mmtf.rcsb.org)* using the following Biopython parsers: *MMCIFParser, FastMMCIFParser, PDBParser, and MMTFParser*. The results of these benchmarks are described in the paper: **MMTF - an efficient file format for the transmission, visualization, and analysis of macromolecular structures (2017) bioRxiv 122689,  https://doi.org/10.1101/122689.**
 
